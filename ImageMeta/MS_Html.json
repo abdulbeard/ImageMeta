@@ -1,0 +1,1516 @@
+[
+  {
+    "Name": "GpsVer",
+    "Desc": "Version of the Global Positioning Systems (GPS) IFD, given as 2.0.0.0. This tag is mandatory when the PropertyTagGpsIFD tag is present. When the version is 2.0.0.0, the tag value is 0x02000000",
+    "Tag": "0x0000",
+    "Type": "['Byte']",
+    "Count": "4"
+  },
+  {
+    "Name": "GpsLatitudeRef",
+    "Desc": "Null-terminated character string that specifies whether the latitude is north or south. N specifies north latitude, and S specifies south latitude",
+    "Tag": "0x0001",
+    "Type": "['ASCII']",
+    "Count": "2"
+  },
+  {
+    "Name": "GpsLatitude",
+    "Desc": "Latitude. Latitude is expressed as three rational values giving the degrees, minutes, and seconds respectively. When degrees, minutes, and seconds are expressed, the format is dd/1, mm/1, ss/1. When degrees and minutes are used and, for example, fractions of minutes are given up to two decimal places, the format is dd/1, mmmm/100, 0/1",
+    "Tag": "0x0002",
+    "Type": "['Rational']",
+    "Count": "3"
+  },
+  {
+    "Name": "GpsLongitudeRef",
+    "Desc": "Null-terminated character string that specifies whether the longitude is east or west longitude. E specifies east longitude, and W specifies west longitude",
+    "Tag": "0x0003",
+    "Type": "['ASCII']",
+    "Count": "2"
+  },
+  {
+    "Name": "GpsLongitude",
+    "Desc": "Longitude. Longitude is expressed as three rational values giving the degrees, minutes, and seconds respectively. When degrees, minutes and seconds are expressed, the format is ddd/1, mm/1, ss/1. When degrees and minutes are used and, for example, fractions of minutes are given up to two decimal places, the format is ddd/1, mmmm/100, 0/1",
+    "Tag": "0x0004",
+    "Type": "['Rational']",
+    "Count": "3"
+  },
+  {
+    "Name": "GpsAltitudeRef",
+    "Desc": "Reference altitude, in meters.",
+    "Tag": "0x0005",
+    "Type": "['Byte']",
+    "Count": "1"
+  },
+  {
+    "Name": "GpsAltitude",
+    "Desc": "Altitude, in meters, based on the reference altitude specified by PropertyTagGpsAltitudeRef.",
+    "Tag": "0x0006",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "GpsGpsTime",
+    "Desc": "Time as Coordinated Universal Time (UTC). The value is expressed as three rational numbers that give the hour,minute, and second.",
+    "Tag": "0x0007",
+    "Type": "['Rational']",
+    "Count": "3"
+  },
+  {
+    "Name": "GpsGpsSatellites",
+    "Desc": "Null-terminated character string that specifies the GPS satellites used for measurements. This tag can be used tospecify the ID number, angle of elevation, azimuth, SNR, and other information about each satellite. The format isnot specified. If the GPS receiver is incapable of taking measurements, the value of the tag must be set to NULL.",
+    "Tag": "0x0008",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "GpsGpsStatus",
+    "Desc": "Null-terminated character string that specifies the status of the GPS receiver when the image is recorded.A means measurement is in progress, and V means the measurement is Interoperability.",
+    "Tag": "0x0009",
+    "Type": "['ASCII']",
+    "Count": "2"
+  },
+  {
+    "Name": "GpsGpsMeasureMode",
+    "Desc": "Null-terminated character string that specifies the GPS measurement mode. 2 specifies 2-D measurement,and 3 specifies 3-D measurement.",
+    "Tag": "0x000A",
+    "Type": "['ASCII']",
+    "Count": "2"
+  },
+  {
+    "Name": "GpsGpsDop",
+    "Desc": "GPS DOP (data degree of precision). An HDOP value is written during 2-D measurement, and a PDOP value is writtenduring 3-D measurement.",
+    "Tag": "0x000B",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "GpsSpeedRef",
+    "Desc": "Null-terminated character string that specifies the unit used to express the GPS receiver speed of movement.K, M, and N represent kilometers per hour, miles per hour, and knots respectively.",
+    "Tag": "0x000C",
+    "Type": "['ASCII']",
+    "Count": "2"
+  },
+  {
+    "Name": "GpsSpeed",
+    "Desc": "Speed of the GPS receiver movement.",
+    "Tag": "0x000D",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "GpsTrackRef",
+    "Desc": "Null-terminated character string that specifies the reference for giving the direction of GPS receiver movement.T specifies true direction, and M specifies magnetic direction.",
+    "Tag": "0x000E",
+    "Type": "['ASCII']",
+    "Count": "2"
+  },
+  {
+    "Name": "GpsTrack",
+    "Desc": "Direction of GPS receiver movement. The range of values is from 0.00 to 359.99.",
+    "Tag": "0x000F",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "GpsImgDirRef",
+    "Desc": "Null-terminated character string that specifies the reference for the direction of the image when it is captured.T specifies true direction, and M specifies magnetic direction.",
+    "Tag": "0x0010",
+    "Type": "['ASCII']",
+    "Count": "2"
+  },
+  {
+    "Name": "GpsImgDir",
+    "Desc": "Direction of the image when it was captured. The range of values is from 0.00 to 359.99.",
+    "Tag": "0x0011",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "GpsMapDatum",
+    "Desc": "Null-terminated character string that specifies geodetic survey data used by the GPS receiver. If the survey data isrestricted to Japan, the value of this tag is TOKYO or WGS-84.",
+    "Tag": "0x0012",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "GpsDestLatRef",
+    "Desc": "Null-terminated character string that specifies whether the latitude of the destination point is north or southlatitude. N specifies north latitude, and S specifies south latitude.",
+    "Tag": "0x0013",
+    "Type": "['ASCII']",
+    "Count": "2"
+  },
+  {
+    "Name": "GpsDestLat",
+    "Desc": "Latitude of the destination point. The latitude is expressed as three rational values giving the degrees, minutes,and seconds respectively. When degrees, minutes, and seconds are expressed, the format is dd/1, mm/1, ss/1. Whendegrees and minutes are used and, for example, fractions of minutes are given up to two decimal places, the formatis dd/1, mmmm/100, 0/1.",
+    "Tag": "0x0014",
+    "Type": "['Rational']",
+    "Count": "3"
+  },
+  {
+    "Name": "GpsDestLongRef",
+    "Desc": "Null-terminated character string that specifies whether the longitude of the destination point is east or westlongitude. E specifies east longitude, and W specifies west longitude.",
+    "Tag": "0x0015",
+    "Type": "['ASCII']",
+    "Count": "2"
+  },
+  {
+    "Name": "GpsDestLong",
+    "Desc": "Longitude of the destination point. The longitude is expressed as three rational values giving the degrees, minutes,and seconds respectively. When degrees, minutes, and seconds are expressed, the format is ddd/1, mm/1, ss/1. Whendegrees and minutes are used and, for example, fractions of minutes are given up to two decimal places, the formatis ddd/1, mmmm/100, 0/1.",
+    "Tag": "0x0016",
+    "Type": "['Rational']",
+    "Count": "3"
+  },
+  {
+    "Name": "GpsDestBearRef",
+    "Desc": "Null-terminated character string that specifies the reference used for giving the bearing to the destination point.T specifies true direction, and M specifies magnetic direction.",
+    "Tag": "0x0017",
+    "Type": "['ASCII']",
+    "Count": "2"
+  },
+  {
+    "Name": "GpsDestBear",
+    "Desc": "Bearing to the destination point. The range of values is from 0.00 to 359.99.",
+    "Tag": "0x0018",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "GpsDestDistRef",
+    "Desc": "Null-terminated character string that specifies the unit used to express the distance to the destination point. K, M,and N represent kilometers, miles, and knots respectively.",
+    "Tag": "0x0019",
+    "Type": "['ASCII']",
+    "Count": "2"
+  },
+  {
+    "Name": "GpsDestDist",
+    "Desc": "Distance to the destination point.",
+    "Tag": "0x001A",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "NewSubfileType",
+    "Desc": "Type of data in a subfile.",
+    "Tag": "0x00FE",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "SubfileType",
+    "Desc": "Type of data in a subfile.",
+    "Tag": "0x00FF",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ImageWidth",
+    "Desc": "Number of pixels per row.",
+    "Tag": "0x0100",
+    "Type": "['Short','Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ImageHeight",
+    "Desc": "Number of pixel rows.",
+    "Tag": "0x0101",
+    "Type": "['Short','Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "BitsPerSample",
+    "Desc": "Number of bits per color component. See also SamplesPerPixel.",
+    "Tag": "0x0102",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "Compression",
+    "Desc": "Compression scheme used for the image data.",
+    "Tag": "0x0103",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "PhotometricInterp",
+    "Desc": "How pixel data will be interpreted.",
+    "Tag": "0x0106",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThreshHolding",
+    "Desc": "Technique used to convert from gray pixels to black and white pixels.",
+    "Tag": "0x0107",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "CellWidth",
+    "Desc": "Width of the dithering or halftoning matrix.",
+    "Tag": "0x0108",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "CellHeight",
+    "Desc": "Height of the dithering or halftoning matrix.",
+    "Tag": "0x0109",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "FillOrder",
+    "Desc": "Logical order of bits in a byte.",
+    "Tag": "0x010A",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "DocumentName",
+    "Desc": "Null-terminated character string that specifies the name of the document from which the image was scanned.",
+    "Tag": "0x010D",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "ImageDescription",
+    "Desc": "Null-terminated character string that specifies the title of the image.",
+    "Tag": "0x010E",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "EquipMake",
+    "Desc": "Null-terminated character string that specifies the manufacturer of the equipment used to record the image.",
+    "Tag": "0x010F",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "EquipModel",
+    "Desc": "Null-terminated character string that specifies the model name or model number of the equipment used to record the image.",
+    "Tag": "0x0110",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "StripOffsets",
+    "Desc": "For each strip, the byte offset of that strip. See also RowsPerStrip and StripBytesCount",
+    "Tag": "0x0111",
+    "Type": "['Short','Long']",
+    "Count": "0"
+  },
+  {
+    "Name": "Orientation",
+    "Desc": "Image orientation viewed in terms of rows and columns. 1 - The 0th row is at the top of the visual image, and the 0th column is the visual left side. 2 - The 0th row is atthe visual top of the image, and the 0th column is the visual right side. 3 - The 0th row is at the visual bottom ofthe image, and the 0th column is the visual right side. 4 - The 0th row is at the visual bottom of the image, andthe 0th column is the visual left side. 5 - The 0th row is the visual left side of the image, and the 0th column isthe visual top. 6 - The 0th row is the visual right side of the image, and the 0th column is the visual top. 7 - The0th row is the visual right side of the image, and the 0th column is the visual bottom. 8 - The 0th row is thevisual left side of the image, and the 0th column is the visual bottom.",
+    "Tag": "0x0112",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "SamplesPerPixel",
+    "Desc": "Number of color components per pixel.",
+    "Tag": "0x0115",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "RowsPerStrip",
+    "Desc": "Number of rows per strip. See also StripBytesCount and StripOffsets",
+    "Tag": "0x0116",
+    "Type": "['Short','Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "StripBytesCount",
+    "Desc": "For each strip, the total number of bytes in that strip.",
+    "Tag": "0x0117",
+    "Type": "['Short','Long']",
+    "Count": "0"
+  },
+  {
+    "Name": "MinSampleValue",
+    "Desc": "For each color component, the minimum value assigned to that component. See also SamplesPerPixel",
+    "Tag": "0x0118",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "MaxSampleValue",
+    "Desc": "For each color component, the maximum value assigned to that component. See also SamplesPerPixel",
+    "Tag": "0x0119",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "XResolution",
+    "Desc": "Number of pixels per unit in the image width (x) direction. The unit is specified by ResolutionUnit",
+    "Tag": "0x011A",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "YResolution",
+    "Desc": "Number of pixels per unit in the image height (y) direction. The unit is specified by ResolutionUnit",
+    "Tag": "0x011B",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "PlanarConfig",
+    "Desc": "Whether pixel components are recorded in chunky or planar format.",
+    "Tag": "0x011C",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "PageName",
+    "Desc": "Null-terminated character string that specifies the name of the page from which the image was scanned.",
+    "Tag": "0x011D",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "XPosition",
+    "Desc": "Offset from the left side of the page to the left side of the image. The unit of measure is specified by ResolutionUnit",
+    "Tag": "0x011E",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "YPosition",
+    "Desc": "Offset from the top of the page to the top of the image. The unit of measure is specified by ResolutionUnit",
+    "Tag": "0x011F",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "FreeOffset",
+    "Desc": "For each string of contiguous unused bytes, the byte offset of that string.",
+    "Tag": "0x0120",
+    "Type": "['Long']"
+  },
+  {
+    "Name": "FreeByteCounts",
+    "Desc": "For each string of contiguous unused bytes, the number of bytes in that string.",
+    "Tag": "0x0121",
+    "Type": "['Long']",
+    "Count": "0"
+  },
+  {
+    "Name": "GrayResponseUnit",
+    "Desc": "Precision of the number specified by PropertyTagGrayResponseCurve. 1 specifies tenths, 2 specifies hundredths, 3specifies thousandths, and so on.",
+    "Tag": "0x0122",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "GrayResponseCurve",
+    "Desc": "For each possible pixel value in a grayscale image, the optical density of that pixel value.",
+    "Tag": "0x0123",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "T4Option",
+    "Desc": "Set of flags that relate to T4 encoding.",
+    "Tag": "0x0124",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "T6Option",
+    "Desc": "Set of flags that relate to T6 encoding.",
+    "Tag": "0x0125",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ResolutionUnit",
+    "Desc": "Unit of measure for the horizontal resolution and the vertical resolution. 2 - inch 3 - centimeter",
+    "Tag": "0x0128",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "PageNumber",
+    "Desc": "Page number of the page from which the image was scanned.",
+    "Tag": "0x0129",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "TransferFunction",
+    "Desc": "Tables that specify transfer functions for the image. Total number of 16-bit words required for the tables",
+    "Tag": "0x012D",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "SoftwareUsed",
+    "Desc": "Null-terminated character string that specifies the name and version of the software or firmware of the device usedto generate the image.",
+    "Tag": "0x0131",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "DateTime",
+    "Desc": "Date and time the image was created.",
+    "Tag": "0x0132",
+    "Type": "['ASCII']",
+    "Count": "20"
+  },
+  {
+    "Name": "Artist",
+    "Desc": "Null-terminated character string that specifies the name of the person who created the image.",
+    "Tag": "0x013B",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "HostComputer",
+    "Desc": "Null-terminated character string that specifies the computer and/or operating system used to create the image.",
+    "Tag": "0x013C",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "Predictor",
+    "Desc": "Type of prediction scheme that was applied to the image data before the encoding scheme was applied.",
+    "Tag": "0x013D",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "WhitePoint",
+    "Desc": "Chromaticity of the white point of the image.",
+    "Tag": "0x013E",
+    "Type": "['Rational']",
+    "Count": "2"
+  },
+  {
+    "Name": "PrimaryChromaticities",
+    "Desc": "For each of the three primary colors in the image, the chromaticity of that color.",
+    "Tag": "0x013F",
+    "Type": "['Rational']",
+    "Count": "6"
+  },
+  {
+    "Name": "ColorMap",
+    "Desc": "Color palette (lookup table) for a palette-indexed image.",
+    "Tag": "0x0140",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "HalftoneHints",
+    "Desc": "Information used by the halftone function",
+    "Tag": "0x0141",
+    "Type": "['Short']",
+    "Count": "2"
+  },
+  {
+    "Name": "TileWidth",
+    "Desc": "Number of pixel columns in each tile.",
+    "Tag": "0x0142",
+    "Type": "['Short','Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "TileLength",
+    "Desc": "Number of pixel rows in each tile.",
+    "Tag": "0x0143",
+    "Type": "['Short','Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "TileOffset",
+    "Desc": "For each tile, the byte offset of that tile.",
+    "Tag": "0x0144",
+    "Type": "['Long']",
+    "Count": "0"
+  },
+  {
+    "Name": "TileByteCounts",
+    "Desc": "For each tile, the number of bytes in that tile.",
+    "Tag": "0x0145",
+    "Type": "['Short','Long']",
+    "Count": "0"
+  },
+  {
+    "Name": "InkSet",
+    "Desc": "Set of inks used in a separated image.",
+    "Tag": "0x014C",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "InkNames",
+    "Desc": "Sequence of concatenated, null-terminated, character strings that specify the names of the inks used in a separated image.",
+    "Tag": "0x014D",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "NumberOfInks",
+    "Desc": "Number of inks.",
+    "Tag": "0x014E",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "DotRange",
+    "Desc": "Color component values that correspond to a 0 percent dot and a 100 percent dot. 2 or 2 × SamplesPerPixel",
+    "Tag": "0x0150",
+    "Type": "['Byte','Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "TargetPrinter",
+    "Desc": "Null-terminated character string that describes the intended printing environment.",
+    "Tag": "0x0151",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "ExtraSamples",
+    "Desc": "Number of extra color components. For example, one extra component might hold an alpha value.",
+    "Tag": "0x0152",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "SampleFormat",
+    "Desc": "For each color component, the numerical format (unsigned, signed, floating point) of that component. See also SamplesPerPixel",
+    "Tag": "0x0153",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "SMinSampleValue",
+    "Desc": "For each color component, the minimum value of that component. See also SamplesPerPixel",
+    "Tag": "0x0154",
+    "Type": "['Undefined']",
+    "Count": "0"
+  },
+  {
+    "Name": "SMaxSampleValue",
+    "Desc": "For each color component, the maximum value of that component. See also SamplesPerPixel",
+    "Tag": "0x0155",
+    "Type": "['Undefined']",
+    "Count": "0"
+  },
+  {
+    "Name": "TransferRange",
+    "Desc": "Table of values that extends the range of the transfer function.",
+    "Tag": "0x0156",
+    "Type": "['Short']",
+    "Count": "6"
+  },
+  {
+    "Name": "JPEGProc",
+    "Desc": "JPEG compression process.",
+    "Tag": "0x0200",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "JPEGInterFormat",
+    "Desc": "Offset to the start of a JPEG bitstream.",
+    "Tag": "0x0201",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "JPEGInterLength",
+    "Desc": "Length, in bytes, of the JPEG bitstream.",
+    "Tag": "0x0202",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "JPEGRestartInterval",
+    "Desc": "Length of the restart interval.",
+    "Tag": "0x0203",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "JPEGLosslessPredictors",
+    "Desc": "For each color component, a lossless predictor-selection value for that component. See also SamplesPerPixel",
+    "Tag": "0x0205",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "JPEGPointTransforms",
+    "Desc": "For each color component, a point transformation value for that component. See also SamplesPerPixel",
+    "Tag": "0x0206",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "JPEGQTables",
+    "Desc": "For each color component, the offset to the quantization table for that component. See also SamplesPerPixel",
+    "Tag": "0x0207",
+    "Type": "['Long']",
+    "Count": "0"
+  },
+  {
+    "Name": "JPEGDCTables",
+    "Desc": "For each color component, the offset to the DC Huffman table (or lossless Huffman table) for that component. See also SamplesPerPixel",
+    "Tag": "0x0208",
+    "Type": "['Long']",
+    "Count": "0"
+  },
+  {
+    "Name": "JPEGACTables",
+    "Desc": "For each color component, the offset to the AC Huffman table for that component. See also SamplesPerPixel",
+    "Tag": "0x0209",
+    "Type": "['Long']",
+    "Count": "0"
+  },
+  {
+    "Name": "YCbCrCoefficients",
+    "Desc": "Coefficients for transformation from RGB to YCbCr image data.",
+    "Tag": "0x0211",
+    "Type": "['Rational']",
+    "Count": "3"
+  },
+  {
+    "Name": "YCbCrSubsampling",
+    "Desc": "Sampling ratio of chrominance components in relation to the luminance component.",
+    "Tag": "0x0212",
+    "Type": "['Short']",
+    "Count": "2"
+  },
+  {
+    "Name": "YCbCrPositioning",
+    "Desc": "Position of chrominance components in relation to the luminance component.",
+    "Tag": "0x0213",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "REFBlackWhite",
+    "Desc": "Reference black point value and reference white point value.",
+    "Tag": "0x0214",
+    "Type": "['Rational']",
+    "Count": "6"
+  },
+  {
+    "Name": "Gamma",
+    "Desc": "Gamma value attached to the image. The gamma value is stored as a rational number (pair of long) with a numerator of 100000. For example, a gamma value of 2.2 is stored as the pair (100000, 45455).",
+    "Tag": "0x0301",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ICCProfileDescriptor",
+    "Desc": "Null-terminated character string that identifies an ICC profile.",
+    "Tag": "0x0302",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "SRGBRenderingIntent",
+    "Desc": "How the image should be displayed as defined by the International Color Consortium (ICC). If a GDI+ object is constructed with theuseEmbeddedColorManagement parameter set to TRUE, then GDI+ renders the image according to the specified rendering intent. The intent can be set to perceptual, relative colorimetric, saturation, or absolutecolorimetric. Perceptual intent, which is suitable for photographs,\tgives good adaptation to the display device gamut at theexpense of colorimetric accuracy.Relative colorimetric intent is suitable for images (for example, logos) that require color appearance matchingthat is relative to the display device white point.Saturation intent, which is suitable for charts and graphs, preserves saturation at the expense of hue andlightness.Absolute colorimetric intent is suitable for proofs(previews of images destined for a different display device) that require preservation of absolute colorimetry. Perceptual intent, which is suitable for photographs, gives good adaptation to the display device gamut at theexpense of colorimetric accuracy.Relative colorimetric intent is suitable for images (for example, logos) that require color appearance matchingthat is relative to the display device white point.Saturation intent, which is suitable for charts and graphs, preserves saturation at the expense of hue andlightness.Absolute colorimetric intent is suitable for proofs(previews of images destined for a different display device) that require preservation of absolute colorimetry.",
+    "Tag": "0x0303",
+    "Type": "['BYTE']",
+    "Count": "1"
+  },
+  {
+    "Name": "ImageTitle",
+    "Desc": "Null-terminated character string that specifies the title of the image.",
+    "Tag": "0x0320",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "ResolutionXUnit",
+    "Desc": "Units in which to display horizontal resolution. 1 - pixels per inch 2 - pixels per centimeter",
+    "Tag": "0x5001",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ResolutionYUnit",
+    "Desc": "Units in which to display vertical resolution. 1 - pixels per inch 2 - pixels per centimeter",
+    "Tag": "0x5002",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ResolutionXLengthUnit",
+    "Desc": "Units in which to display the image width. 1 - inches 2 - centimeters 3 - points 4 - picas 5 - columns",
+    "Tag": "0x5003",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ResolutionYLengthUnit",
+    "Desc": "Units in which to display the image height. 1 - inches 2 - centimeters 3 - points 4 - picas 5 - columns",
+    "Tag": "0x5004",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "PrintFlags",
+    "Desc": "Sequence of one-byte Boolean values that specify printing options.",
+    "Tag": "0x5005",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "PrintFlagsVersion",
+    "Desc": "Print flags version.",
+    "Tag": "0x5006",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "PrintFlagsCrop",
+    "Desc": "Print flags center crop marks.",
+    "Tag": "0x5007",
+    "Type": "['Byte']",
+    "Count": "1"
+  },
+  {
+    "Name": "PrintFlagsBleedWidth",
+    "Desc": "Print flags bleed width.",
+    "Tag": "0x5008",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "PrintFlagsBleedWidthScale",
+    "Desc": "Print flags bleed width scale.",
+    "Tag": "0x5009",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "HalftoneLPI",
+    "Desc": "Ink's screen frequency, in lines per inch.",
+    "Tag": "0x500A",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "HalftoneLPIUnit",
+    "Desc": "Units for the screen frequency. 1 - lines per inch 2 - lines per centimeter",
+    "Tag": "0x500B",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "HalftoneDegree",
+    "Desc": "Angle for screen.",
+    "Tag": "0x500C",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "HalftoneShape",
+    "Desc": "Shape of the halftone dots. 0 - round 1 - ellipse 2 - line 3 - square 4 - cross 6 - diamond",
+    "Tag": "0x500D",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "HalftoneMisc",
+    "Desc": "Miscellaneous halftone information.",
+    "Tag": "0x500E",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "HalftoneScreen",
+    "Desc": "Boolean value that specifies whether to use the printer's default screens. 1 - use printer 's default screens 2 - other",
+    "Tag": "0x500F",
+    "Type": "['Byte']",
+    "Count": "1"
+  },
+  {
+    "Name": "JPEGQuality",
+    "Desc": "Private tag used by the Adobe Photoshop format. Not for public use.",
+    "Tag": "0x5010",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "GridSize",
+    "Desc": "Block of information about grids and guides.",
+    "Tag": "0x5011",
+    "Type": "['Undefined']",
+    "Count": "0"
+  },
+  {
+    "Name": "ThumbnailFormat",
+    "Desc": "Format of the thumbnail image. 0 - raw RGB 1 - JPEG",
+    "Tag": "0x5012",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailWidth",
+    "Desc": "Width, in pixels, of the thumbnail image.",
+    "Tag": "0x5013",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailHeight",
+    "Desc": "Height, in pixels, of the thumbnail image.",
+    "Tag": "0x5014",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailColorDepth",
+    "Desc": "bits per pixel (BPP) for the thumbnail image.",
+    "Tag": "0x5015",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailPlanes",
+    "Desc": "Number of color planes for the thumbnail image.",
+    "Tag": "0x5016",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailRawBytes",
+    "Desc": "Byte offset between rows of pixel data.",
+    "Tag": "0x5017",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailSize",
+    "Desc": "Total size, in bytes, of the thumbnail image.",
+    "Tag": "0x5018",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailCompressedSize",
+    "Desc": "Compressed size, in bytes, of the thumbnail image.",
+    "Tag": "0x5019",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ColorTransferFunction",
+    "Desc": "Table of values that specify color transfer functions.",
+    "Tag": "0x501A",
+    "Type": "['Undefined']",
+    "Count": "0"
+  },
+  {
+    "Name": "ThumbnailData",
+    "Desc": "Raw thumbnail bits in JPEG or RGB format. Depends on PropertyTagThumbnailFormat.",
+    "Tag": "0x501B",
+    "Type": "['Byte']",
+    "Count": "0"
+  },
+  {
+    "Name": "ThumbnailImageWidth",
+    "Desc": "Number of pixels per row in the thumbnail image.",
+    "Tag": "0x5020",
+    "Type": "['Short','Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailImageHeight",
+    "Desc": "Number of pixel rows in the thumbnail image.",
+    "Tag": "0x5021",
+    "Type": "['Short','Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailBitsPerSample",
+    "Desc": "Number of bits per color component in the thumbnail image. See also ThumbnailSamplesPerPixel",
+    "Tag": "0x5022",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "ThumbnailCompression",
+    "Desc": "Compression scheme used for thumbnail image data.",
+    "Tag": "0x5023",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailPhotometricInterp",
+    "Desc": "How thumbnail pixel data will be interpreted.",
+    "Tag": "0x5024",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailImageDescription",
+    "Desc": "Null-terminated character string that specifies the title of the image.",
+    "Tag": "0x5025",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "ThumbnailEquipMake",
+    "Desc": "Null-terminated character string that specifies the manufacturer of the equipment used to record the thumbnail image.",
+    "Tag": "0x5026",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "ThumbnailEquipModel",
+    "Desc": "Null-terminated character string that specifies the model name or model number of the equipment used to record thethumbnail image.",
+    "Tag": "0x5027",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "ThumbnailStripOffsets",
+    "Desc": "For each strip in the thumbnail image, the byte offset of that strip. See also ThumbnailRowsPerStrip and PropertyTagThumbnailStripBytesCount",
+    "Tag": "0x5028",
+    "Type": "['Short','Long']",
+    "Count": "0"
+  },
+  {
+    "Name": "ThumbnailOrientation",
+    "Desc": "Thumbnail image orientation in terms of rows and columns. See also Orientation",
+    "Tag": "0x5029",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailSamplesPerPixel",
+    "Desc": "Number of color components per pixel in the thumbnail image.",
+    "Tag": "0x502A",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailRowsPerStrip",
+    "Desc": "Number of rows per strip in the thumbnail image. See also ThumbnailStripBytesCount and ThumbnailStripOffsets",
+    "Tag": "0x502B",
+    "Type": "['Short','Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailStripBytesCount",
+    "Desc": "For each thumbnail image strip, the total number of bytes in that strip.",
+    "Tag": "0x502C",
+    "Type": "['Short','Long']",
+    "Count": "0"
+  },
+  {
+    "Name": "ThumbnailResolutionX",
+    "Desc": "Thumbnail resolution in the width direction. The resolution unit is given in ThumbnailResolutionUnit",
+    "Tag": "0x502D"
+  },
+  {
+    "Name": "ThumbnailResolutionY",
+    "Desc": "Thumbnail resolution in the height direction. The resolution unit is given in ThumbnailResolutionUnit",
+    "Tag": "0x502E"
+  },
+  {
+    "Name": "ThumbnailPlanarConfig",
+    "Desc": "Whether pixel components in the thumbnail image are recorded in chunky or planar format. See also PlanarConfig",
+    "Tag": "0x502F",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailResolutionUnit",
+    "Desc": "Unit of measure for the horizontal resolution and the vertical resolution of the thumbnail image. See also ResolutionUnit",
+    "Tag": "0x5030",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailTransferFunction",
+    "Desc": "Tables that specify transfer functions for the thumbnail image. See also TransferFunction. Total number of 16-bit words required for the tables",
+    "Tag": "0x5031",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "ThumbnailSoftwareUsed",
+    "Desc": "Null-terminated character string that specifies the name and version of the software or firmware of the device usedto generate the thumbnail image.",
+    "Tag": "0x5032",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "ThumbnailDateTime",
+    "Desc": "Date and time the thumbnail image was created. See also DateTime",
+    "Tag": "0x5033",
+    "Type": "['ASCII']",
+    "Count": "20"
+  },
+  {
+    "Name": "ThumbnailArtist",
+    "Desc": "Null-terminated character string that specifies the name of the person who created the thumbnail image.",
+    "Tag": "0x5034",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "ThumbnailWhitePoint",
+    "Desc": "Chromaticity of the white point of the thumbnail image. See also WhitePoint",
+    "Tag": "0x5035",
+    "Type": "['Rational']",
+    "Count": "2"
+  },
+  {
+    "Name": "ThumbnailPrimaryChromaticities",
+    "Desc": "For each of the three primary colors in the thumbnail image, the chromaticity of that color. See also PrimaryChromaticities",
+    "Tag": "0x5036",
+    "Type": "['Rational']",
+    "Count": "6"
+  },
+  {
+    "Name": "ThumbnailYCbCrCoefficients",
+    "Desc": "Coefficients for transformation from RGB to YCbCr data for the thumbnail image. See also YCbCrCoefficients",
+    "Tag": "0x5037",
+    "Type": "['Rational']",
+    "Count": "3"
+  },
+  {
+    "Name": "ThumbnailYCbCrSubsampling",
+    "Desc": "Sampling ratio of chrominance components in relation to the luminance component for the thumbnail image. See also YCbCrSubsampling",
+    "Tag": "0x5038",
+    "Type": "['Short']",
+    "Count": "2"
+  },
+  {
+    "Name": "ThumbnailYCbCrPositioning",
+    "Desc": "Position of chrominance components in relation to the luminance component for the thumbnail image. See also YCbCrPositioning",
+    "Tag": "0x5039",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ThumbnailRefBlackWhite",
+    "Desc": "Reference black point value and reference white point value for the thumbnail image. See also REFBlackWhite",
+    "Tag": "0x503A",
+    "Type": "['Rational']",
+    "Count": "6"
+  },
+  {
+    "Name": "ThumbnailCopyRight",
+    "Desc": "Null-terminated character string that contains copyright information for the thumbnail image.",
+    "Tag": "0x503B",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "LuminanceTable",
+    "Desc": "Luminance table. The luminance table and the chrominance table are used to control JPEG quality. A valid luminance orchrominance table has 64 entries of type PropertyTagTypeShort. If an image has either a luminance table or achrominance table, then it must have both tables.",
+    "Tag": "0x5090",
+    "Type": "['Short']",
+    "Count": "64"
+  },
+  {
+    "Name": "ChrominanceTable",
+    "Desc": "Chrominance table. The luminance table and the chrominance table are used to control JPEG quality. A valid luminanceor chrominance table has 64 entries of type PropertyTagTypeShort. If an image has either a luminance table or achrominance table, then it must have both tables.",
+    "Tag": "0x5091",
+    "Type": "['Short']",
+    "Count": "64"
+  },
+  {
+    "Name": "FrameDelay",
+    "Desc": "Time delay, in hundredths of a second, between two frames in an animated GIF image.",
+    "Tag": "0x5100",
+    "Type": "['Long']",
+    "Count": "0"
+  },
+  {
+    "Name": "LoopCount",
+    "Desc": "For an animated GIF image, the number of times to display the animation. A value of 0 specifies that the animation ,should be displayed infinitely.",
+    "Tag": "0x5101",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "GlobalPalette",
+    "Desc": "Color palette for an indexed bitmap in a GIF image. Count is 3x no. of palette entries",
+    "Tag": "0x5102",
+    "Type": "['Byte']",
+    "Count": "0"
+  },
+  {
+    "Name": "IndexBackground",
+    "Desc": "Index of the background color in the palette of a GIF image.",
+    "Tag": "0x5103",
+    "Type": "['Byte']",
+    "Count": "1"
+  },
+  {
+    "Name": "IndexTransparent",
+    "Desc": "Index of the transparent color in the palette of a GIF image.",
+    "Tag": "0x5104",
+    "Type": "['Byte']",
+    "Count": "1"
+  },
+  {
+    "Name": "PixelUnit",
+    "Desc": "Unit for PropertyTagPixelPerUnitX and PropertyTagPixelPerUnitY. 0 - unknown",
+    "Tag": "0x5110",
+    "Type": "['Byte']",
+    "Count": "1"
+  },
+  {
+    "Name": "PixelPerUnitX",
+    "Desc": "Pixels per unit in the x direction.",
+    "Tag": "0x5111",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "PixelPerUnitY",
+    "Desc": "Pixels per unit in the y direction.",
+    "Tag": "0x5112",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "PaletteHistogram",
+    "Desc": "Palette histogram. Length of the histogram",
+    "Tag": "0x5113",
+    "Type": "['Byte']",
+    "Count": "0"
+  },
+  {
+    "Name": "Copyright",
+    "Desc": "Null-terminated character string that contains copyright information.",
+    "Tag": "0x8298",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "ExifExposureTime",
+    "Desc": "Exposure time, measured in seconds.",
+    "Tag": "0x829A",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifFNumber",
+    "Desc": "F number.",
+    "Tag": "0x829D",
+    "Type": "['RATIONAL']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifIFD",
+    "Desc": "Private tag used by GDI+. Not for public use. GDI+ uses this tag to locate Exif-specific information.",
+    "Tag": "0x8769",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ICCProfile",
+    "Desc": "ICC profile embedded in the image.",
+    "Tag": "0x8773",
+    "Type": "['Byte']",
+    "Count": "0"
+  },
+  {
+    "Name": "ExifExposureProg",
+    "Desc": "Class of the program used by the camera to set exposure when the picture is taken. Default00 - not defined 1 - manual 2 - normal program 3 - aperture priority 4 - shutter priority 5 - creative program(biasedtoward depth of field) 6 - action program(biased toward fast shutter speed) 7 - portrait mode (for close - up photoswith the background out of focus) 8 - landscape mode (for landscape photos with the background in focus) 9 to 255 - reserved",
+    "Tag": "0x8822",
+    "Type": "['SHORT']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifSpectralSense",
+    "Desc": "Null-terminated character string that specifies the spectral sensitivity of each channel of the camera used. Thestring is compatible with the standard developed by the ASTM Technical Committee.",
+    "Tag": "0x8824",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "GpsIFD",
+    "Desc": "Offset to a block of GPS property items. Property items whose tags have the prefix PropertyTagGps are stored in theGPS block. The GPS property items are defined in the EXIF specification. GDI+ uses this tag to locate GPSinformation, but GDI+ does not expose this tag for public use.",
+    "Tag": "0x8825",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifISOSpeed",
+    "Desc": "ISO speed and ISO latitude of the camera or input device as specified in ISO 12232.",
+    "Tag": "0x8827",
+    "Type": "['Short']",
+    "Count": "0"
+  },
+  {
+    "Name": "ExifOECF",
+    "Desc": "Optoelectronic conversion function (OECF) specified in ISO 14524. The OECF is the relationship between the cameraoptical input and the image values.",
+    "Tag": "0x8828",
+    "Type": "['Undefined']",
+    "Count": "0"
+  },
+  {
+    "Name": "ExifVer",
+    "Desc": "Version of the EXIF standard supported. Nonexistence of this field is taken to mean nonconformance to the standard.Conformance to the standard is indicated by recording 0210 as a 4-byte ASCII string. Because the type isPropertyTagTypeUndefined, there is no NULL terminator. Default 0210",
+    "Tag": "0x9000",
+    "Type": "['Undefined']",
+    "Count": "4"
+  },
+  {
+    "Name": "ExifDTOrig",
+    "Desc": "Date and time when the original image data was generated. For a DSC, the date and time when the picture was taken.The format is YYYY:MM:DD HH:MM:SS with time shown in 24-hour format and the date and time separated by one blankcharacter (0x2000). The character string length is 20 bytes including the NULL terminator. When the field is empty,it is treated as unknown.",
+    "Tag": "0x9003",
+    "Type": "['ASCII']",
+    "Count": "20"
+  },
+  {
+    "Name": "ExifDTDigitized",
+    "Desc": "Date and time when the image was stored as digital data. If, for example, an image was captured by DSC and at thesame time the file was recorded, then DateTimeOriginal and DateTimeDigitized will have the same contents. The format is YYYY:MM:DD HH:MM:SS with time shown in 24-hour format and the date and time separated by one blankcharacter (0x2000). The character string length is 20 bytes including the NULL terminator. When the field is empty,it is treated as unknown.",
+    "Tag": "0x9004",
+    "Type": "['ASCII']",
+    "Count": "20"
+  },
+  {
+    "Name": "ExifCompConfig",
+    "Desc": "Information specific to compressed data. The channels of each component are arranged in order from the firstcomponent to the fourth. For uncompressed data, the data arrangement is given in the PropertyTagPhotometricInterptag. However, because PropertyTagPhotometricInterp can only express the order of Y, Cb, and Cr, this tag is provided forcases when compressed data uses components other than Y, Cb, and Cr and to support other sequences. Default4 5 6 0(if RGB uncompressed) 1 2 3 0(other cases) 0 - does not exist 1 - Y 2 - Cb 3 - Cr 4 - R 5 - G 6 - B Other - reserved",
+    "Tag": "0x9101",
+    "Type": "['Undefined']",
+    "Count": "4"
+  },
+  {
+    "Name": "ExifCompBPP",
+    "Desc": "Information specific to compressed data. The compression mode used for a compressed image is indicated in unit BPP.",
+    "Tag": "0x9102",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifShutterSpeed",
+    "Desc": "Shutter speed. The unit is the Additive System of Photographic Exposure (APEX) value.",
+    "Tag": "0x9201",
+    "Type": "['SRational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifAperture",
+    "Desc": "Lens aperture. The unit is the APEX value.",
+    "Tag": "0x9202",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifBrightness",
+    "Desc": "Brightness value. The unit is the APEX value. Ordinarily it is given in the range of -99.99 to 99.99.",
+    "Tag": "0x9203",
+    "Type": "['SRational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifExposureBias",
+    "Desc": "Exposure bias. The unit is the APEX value. Ordinarily it is given in the range -99.99 to 99.99.",
+    "Tag": "0x9204",
+    "Type": "['SRational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifMaxAperture",
+    "Desc": "Smallest F number of the lens. The unit is the APEX value. Ordinarily it is given in the range of 00.00 to 99.99, butit is not limited to this range.",
+    "Tag": "0x9205",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifSubjectDist",
+    "Desc": "Distance to the subject, measured in meters.",
+    "Tag": "0x9206",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifMeteringMode",
+    "Desc": "Metering mode. Default00 - unknown 1 - Average 2 - CenterWeightedAverage 3 - Spot 4 - MultiSpot 5 - Pattern 6 - Partial 7 to 254 - reserved255 - other",
+    "Tag": "0x9207",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifLightSource",
+    "Desc": "Type of light source. Default00 - unknown 1 - Daylight 2 - Flourescent 3 - Tungsten 17 - Standard Light A 18 - Standard Light B 19 - Standard LightC 20 - D55 21 - D65 22 - D75 23 to 254 - reserved 255 - other",
+    "Tag": "0x9208",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifFlash",
+    "Desc": "Flash status. This tag is recorded when an image is taken using a strobe light (flash). Bit 0 indicates the flashfiring status, and bits 1 and 2 indicate the flash return status. Values for bit 0 that indicate whether the flash fired: 0b - flash did not fire 1 b - flash fired. Values for bits 1 and 2 that indicate the status of returned light: 00 b - no strobe\treturn detection function 01 b - reserved 10 b - strobe\treturn light not detected 11 b - strobe\treturn light detectedResulting flash tag values: 0x0000 - flash did not fire 0x0001 - flash fired 0x0005 - strobe return light notdetected ",
+    "Tag": "0x9209",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifFocalLength ",
+    "Desc": "Actual focal length, in millimeters, of the lens.Conversion is not made to the focal length of a 35 millimeter filmcamera.",
+    "Tag ": "0x920A ",
+    "Type ": "Rational",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifMakerNote",
+    "Desc": "Note tag.A tag used by manufacturers of EXIF writers to record information.The contents are up to the manufacturer.",
+    "Tag": "0x927C",
+    "Type": "['Undefined']",
+    "Count": "0"
+  },
+  {
+    "Name": "ExifUserComment",
+    "Desc": "Comment tag.A tag used by EXIF users to write keywords or comments about the image besides those inPropertyTagImageDescription and without the character - code limitations of the PropertyTagImageDescription tag. The character code used in the PropertyTagExifUserComment tag is identified based on an ID code in a fixed 8 - bytearea at the start of the tag data area.The unused portion of the area is padded with null characters(0).ID codesare assigned by means of registration.Because the type is not ASCII, it is not necessary to use a NULL terminator.",
+    "Tag ": "0x9286",
+    "Type": "['Undefined']",
+    "Count": "0"
+  },
+  {
+    "Name": "ExifDTSubsec",
+    "Desc": "Null - terminated character string that specifies a fraction of a second for the PropertyTagDateTime tag.",
+    "Tag": "0x9290",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "ExifDTOrigSS",
+    "Desc": "Null - terminated character string that specifies a fraction of a second for the PropertyTagExifDTOrig tag.",
+    "Tag ": "0x9291",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "ExifDTDigSS",
+    "Desc": "Null-terminated character string that specifies a fraction of a second for the PropertyTagExifDTDigitized tag.",
+    "Tag": "0x9292",
+    "Type": "['ASCII']",
+    "Count": "0"
+  },
+  {
+    "Name": "ExifFPXVer",
+    "Desc": "FlashPix format version supported by an FPXR file. If the FPXR function supports FlashPix format version 1.0, this isindicated similarly to PropertyTagExifVer by recording 0100 as a 4-byte ASCII string. Because the type isPropertyTagTypeUndefined, there is no NULL terminator. Default01000100 - FlashPix format version 1.0 Other - reserved",
+    "Tag": "0xA000",
+    "Type": "['Undefined']",
+    "Count": "4"
+  },
+  {
+    "Name": "ExifColorSpace",
+    "Desc": "Color space specifier. Normally sRGB (=1) is used to define the color space based on the PC monitor conditions andenvironment. If a color space other than sRGB is used, Uncalibrated (=0xFFFF) is set. Image data recorded asUncalibrated can be treated as sRGB when it is converted to FlashPix. 0x1 - sRGB 0xFFFF - uncalibrated Other - reserved",
+    "Tag": "0xA001",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifPixXDim",
+    "Desc": "Information specific to compressed data. When a compressed file is recorded, the valid width of the meaningful imagemust be recorded in this tag, whether or not there is padding data or a restart marker. This tag should not exist inan uncompressed file.",
+    "Tag": "0xA002",
+    "Type": "['Short','Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifPixYDim",
+    "Desc": "Information specific to compressed data. When a compressed file is recorded, the valid height of the meaningful imagemust be recorded in this tag whether or not there is padding data or a restart marker. This tag should not exist inan uncompressed file. Because data padding is unnecessary in the vertical direction, the number of lines recorded inthis valid image height tag will be the same as that recorded in the SOF.",
+    "Tag": "0xA003",
+    "Type": "['Short','Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifRelatedWav",
+    "Desc": "The name of an audio file related to the image data. The only relational information recorded is the EXIF audio filename and extension (an ASCII string that consists of 8 characters plus a period (.), plus 3 characters). The path isnot recorded. When you use this tag, audio files must be recorded in conformance with the EXIF audio format. Writerscan also store audio data within APP2 as FlashPix extension stream data.",
+    "Tag": "0xA004",
+    "Type": "['ASCII']",
+    "Count": "13"
+  },
+  {
+    "Name": "ExifInterop",
+    "Desc": "Offset to a block of property items that contain interoperability information.",
+    "Tag": "0xA005",
+    "Type": "['Long']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifFlashEnergy",
+    "Desc": "Strobe energy, in Beam Candle Power Seconds (BCPS), at the time the image was captured.",
+    "Tag": "0xA20B",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifSpatialFR",
+    "Desc": "Camera or input device spatial frequency table and SFR values in the image width, image height, and diagonaldirection, as specified in ISO 12233.",
+    "Tag": "0xA20C",
+    "Type": "['Undefined']",
+    "Count": "0"
+  },
+  {
+    "Name": "ExifFocalXRes",
+    "Desc": "Number of pixels in the image width (x) direction per unit on the camera focal plane. The unit is specified inPropertyTagExifFocalResUnit.",
+    "Tag": "0xA20E",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifFocalYRes",
+    "Desc": "Number of pixels in the image height (y) direction per unit on the camera focal plane. The unit is specified inPropertyTagExifFocalResUnit.",
+    "Tag": "0xA20F",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifFocalResUnit",
+    "Desc": "Unit of measure for PropertyTagExifFocalXRes and PropertyTagExifFocalYRes. 2 - inch 3 - centimeter",
+    "Tag": "0xA210",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifSubjectLoc",
+    "Desc": "Location of the main subject in the scene. The value of this tag represents the pixel at the center of the mainsubject relative to the left edge. The first value indicates the column number, and the second value indicates therow number.",
+    "Tag": "0xA214",
+    "Type": "['Short']",
+    "Count": "2"
+  },
+  {
+    "Name": "ExifExposureIndex",
+    "Desc": "Exposure index selected on the camera or input device at the time the image was captured.",
+    "Tag": "0xA215",
+    "Type": "['Rational']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifSensingMethod",
+    "Desc": "Image sensor type on the camera or input device. 1 - not defined 2 - one - chip color area sensor 3 - two - chip color area sensor 4 - three - chip color area sensor 5 - color sequential area sensor 7 - trilinear sensor 8 - color sequential linear sensor Other - reserved",
+    "Tag": "0xA217",
+    "Type": "['Short']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifFileSource",
+    "Desc": "The image source. If a DSC recorded the image, the value of this tag is 3.",
+    "Tag": "0xA300",
+    "Type": "['Undefined']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifSceneType",
+    "Desc": "The type of scene. If a DSC recorded the image, the value of this tag must be set to 1, indicating that the image was, directly photographed.",
+    "Tag": "0xA301",
+    "Type": "['Undefined']",
+    "Count": "1"
+  },
+  {
+    "Name": "ExifCfaPattern",
+    "Desc": "The color filter array(CFA) geometric pattern of the image sensor when a one - chip color area sensor is used.It doesnot apply to all sensing methods.",
+    "Tag": "0xA302",
+    "Type": "['Undefined']",
+    "Count": "0"
+  }
+]

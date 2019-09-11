@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ImageMeta/obj
+/ImageMeta/bin/Debug/netstandard2.0
+/Test/obj
+/Test/bin/Debug/netcoreapp2.2
+/.vs/ImageMeta/v16
+/.vs/ImageMeta
