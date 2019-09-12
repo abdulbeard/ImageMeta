@@ -7,6 +7,10 @@ namespace ImageMeta
     public enum PropertyType
     {
         /// <summary>
+        /// Specifies that the value data member is an array of bytes that can hold values of any data type
+        /// </summary>
+        Undefined = 0,
+        /// <summary>
         /// Specifies that Value is an array of bytes
         /// </summary>
         Bytes = 1,
